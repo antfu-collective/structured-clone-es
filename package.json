@@ -1,7 +1,7 @@
 {
   "name": "structured-clone-es",
   "type": "module",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "packageManager": "pnpm@9.15.4",
   "description": "A re-distribution of @ungap/structured-clone for Node.js comptaible ES Modules",
   "author": "Andrea Giammarchi",
