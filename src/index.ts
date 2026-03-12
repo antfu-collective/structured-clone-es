@@ -1,14 +1,20 @@
-import _structuredClone from '@ungap/structured-clone'
-import { parse as _parse, stringify as _stringify } from '@ungap/structured-clone/json'
+import { deserialize } from './deserialize'
+import { serialize } from './serialize'
 
 /**
- * Represent a structured clone value as string.
+ * A polyfill/wrapper for the structured clone algorithm.
+ * Uses native `structuredClone` when available, falls back to serialize/deserialize.
+ * When `json` or `lossy` options are provided, always uses the polyfill path.
  */
-export const stringify: (obj: any) => string = _stringify
+export const structuredClone: typeof globalThis.structuredClone
+  = typeof globalThis.structuredClone === 'function'
+    ? (any: any, options?: any) => (
+        options && ('json' in options || 'lossy' in options)
+          ? deserialize(serialize(any, options))
+          : globalThis.structuredClone(any)
+      )
+    : (any: any, options?: any) => deserialize(serialize(any, options))
 
-/**
- * Revive a previously stringified structured clone.
- */
-export const parse: (str: string) => unknown = _parse
-
-export const structuredClone = _structuredClone as typeof globalThis.structuredClone
+export { deserialize } from './deserialize'
+export { parse, stringify } from './json'
+export { serialize } from './serialize'
