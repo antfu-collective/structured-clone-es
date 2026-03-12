@@ -8,7 +8,7 @@ const options = { json: true, lossy: true }
  * Revive a previously stringified structured clone.
  * @param str previously stringified data as string.
  */
-export function parse(str: string): any {
+export function parse<T = any>(str: string): T {
   return deserialize($parse(str))
 }
 

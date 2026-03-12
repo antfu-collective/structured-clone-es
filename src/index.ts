@@ -4,8 +4,8 @@ import { serialize } from './serialize'
 /**
  * A pure implementation of the structured clone algorithm using serialize/deserialize.
  */
-export function structuredClone(any: any, options?: any): any {
-  return deserialize(serialize(any, options))
+export function structuredClone<T>(value: T, options?: { lossy?: boolean }): T {
+  return deserialize(serialize(value, options))
 }
 
 export { deserialize } from './deserialize'
