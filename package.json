@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "packageManager": "pnpm@9.15.4",
-  "description": "A re-distribution of @ungap/structured-clone for Node.js comptaible ES Modules",
+  "description": "A re-distribution of @ungap/structured-clone for Node.js compatible ES Modules",
   "author": "Andrea Giammarchi",
   "license": "ISC",
   "homepage": "https://github.com/antfu-collective/structured-clone-es#readme",
@@ -28,7 +28,7 @@
     "dev": "unbuild --stub",
     "lint": "eslint .",
     "prepublishOnly": "nr build",
-    "release": "bumpp && pnpm publish",
+    "release": "bumpp",
     "start": "tsx src/index.ts",
     "typecheck": "tsc --noEmit",
     "prepare": "simple-git-hooks"
