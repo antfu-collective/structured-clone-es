@@ -24,7 +24,7 @@ The `structuredClone` function is moved from default export to named export. `pa
 [npm-downloads-href]: https://npmjs.com/package/structured-clone-es
 [bundle-src]: https://img.shields.io/bundlephobia/minzip/structured-clone-es?style=flat&colorA=080f12&colorB=1fa669&label=minzip
 [bundle-href]: https://bundlephobia.com/result?p=structured-clone-es
-[license-src]: https://img.shields.io/github/license/antfu/structured-clone-es.svg?style=flat&colorA=080f12&colorB=1fa669
-[license-href]: https://github.com/antfu/structured-clone-es/blob/main/LICENSE
+[license-src]: https://img.shields.io/github/license/antfu-collective/structured-clone-es.svg?style=flat&colorA=080f12&colorB=1fa669
+[license-href]: https://github.com/antfu-collective/structured-clone-es/blob/main/LICENSE
 [jsdocs-src]: https://img.shields.io/badge/jsdocs-reference-080f12?style=flat&colorA=080f12&colorB=1fa669
 [jsdocs-href]: https://www.jsdocs.io/package/structured-clone-es

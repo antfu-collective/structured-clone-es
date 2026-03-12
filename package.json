@@ -6,12 +6,12 @@
   "description": "A re-distribution of @ungap/structured-clone for Node.js comptaible ES Modules",
   "author": "Andrea Giammarchi",
   "license": "ISC",
-  "homepage": "https://github.com/antfu/structured-clone-es#readme",
+  "homepage": "https://github.com/antfu-collective/structured-clone-es#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antfu/structured-clone-es.git"
+    "url": "git+https://github.com/antfu-collective/structured-clone-es.git"
   },
-  "bugs": "https://github.com/antfu/structured-clone-es/issues",
+  "bugs": "https://github.com/antfu-collective/structured-clone-es/issues",
   "keywords": [],
   "sideEffects": false,
   "exports": {
