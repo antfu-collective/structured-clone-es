@@ -3,9 +3,8 @@ import { defineConfig } from 'tsdown'
 export default defineConfig({
   entry: ['src/index.ts'],
   format: 'esm',
-  dts: {
-    sourcemap: false,
-  },
+  dts: true,
+  exports: true,
   clean: true,
   hash: false,
 })

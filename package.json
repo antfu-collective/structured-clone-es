@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "packageManager": "pnpm@10.32.1",
-  "description": "A re-distribution of @ungap/structured-clone for Node.js compatible ES Modules",
+  "description": "An env-agnostic serializer and deserializer with recursion ability and types beyond JSON, based on the HTML structured clone algorithm.",
   "author": "Andrea Giammarchi",
   "license": "ISC",
   "homepage": "https://github.com/antfu-collective/structured-clone-es#readme",
@@ -12,18 +12,16 @@
     "url": "git+https://github.com/antfu-collective/structured-clone-es.git"
   },
   "bugs": "https://github.com/antfu-collective/structured-clone-es/issues",
-  "keywords": [],
+  "keywords": [
+    "structured-clone",
+    "serialize",
+    "deserialize"
+  ],
   "sideEffects": false,
   "exports": {
-    ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      }
-    }
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
@@ -50,10 +48,10 @@
     "lint-staged": "^16.3.3",
     "pnpm": "^10.32.1",
     "simple-git-hooks": "^2.13.1",
-    "tsdown": "^0.12.4",
+    "tsdown": "^0.21.2",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
-    "vitest": "^3.2.1"
+    "vitest": "^4.0.18"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
