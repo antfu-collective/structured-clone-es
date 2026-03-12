@@ -1,11 +1,21 @@
-import { parse as _parse, stringify as _stringify } from '@ungap/structured-clone/json'
+import { deserialize } from './deserialize'
+import { serialize } from './serialize'
 
-/**
- * Represent a structured clone value as string.
- */
-export const stringify: (obj: any) => string = _stringify
+const { parse: $parse, stringify: $stringify } = JSON
+const options = { json: true, lossy: true }
 
 /**
  * Revive a previously stringified structured clone.
+ * @param str previously stringified data as string.
  */
-export const parse: (str: string) => unknown = _parse
+export function parse(str: string): any {
+  return deserialize($parse(str))
+}
+
+/**
+ * Represent a structured clone value as string.
+ * @param any some clone-able value to stringify.
+ */
+export function stringify(any: any): string {
+  return $stringify(serialize(any, options))
+}
