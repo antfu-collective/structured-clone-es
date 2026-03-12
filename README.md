@@ -52,7 +52,7 @@ const obj = parse(str)
 
 ### structuredClone
 
-A `structuredClone` implementation is also exported. It delegates to the native implementation when available, falling back to serialize/deserialize otherwise.
+A pure `structuredClone` implementation is also exported. It always uses the serialize/deserialize path without relying on the runtime's native `structuredClone`.
 
 ```ts
 import { structuredClone } from 'structured-clone-es'
@@ -60,7 +60,7 @@ import { structuredClone } from 'structured-clone-es'
 const cloned = structuredClone({ any: 'serializable' })
 ```
 
-If you need a global polyfill, you can attach it manually:
+If you need polyfill `globalThis.structuredClone`, you can attach it manually:
 
 ```ts
 import { structuredClone } from 'structured-clone-es'

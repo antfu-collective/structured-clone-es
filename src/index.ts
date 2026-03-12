@@ -2,18 +2,11 @@ import { deserialize } from './deserialize'
 import { serialize } from './serialize'
 
 /**
- * A polyfill/wrapper for the structured clone algorithm.
- * Uses native `structuredClone` when available, falls back to serialize/deserialize.
- * When `json` or `lossy` options are provided, always uses the polyfill path.
+ * A pure implementation of the structured clone algorithm using serialize/deserialize.
  */
-export const structuredClone: typeof globalThis.structuredClone
-  = typeof globalThis.structuredClone === 'function'
-    ? (any: any, options?: any) => (
-        options && ('json' in options || 'lossy' in options)
-          ? deserialize(serialize(any, options))
-          : globalThis.structuredClone(any)
-      )
-    : (any: any, options?: any) => deserialize(serialize(any, options))
+export function structuredClone(any: any, options?: any): any {
+  return deserialize(serialize(any, options))
+}
 
 export { deserialize } from './deserialize'
 export { parse, stringify } from './json'
